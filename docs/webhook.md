@@ -1,7 +1,5 @@
 # Posting stats to a Webhook
 
-> 🔥 This integration does **not** require a sponsorship. Enjoy!
-
 This action can also send the results to a webhook of your preference. This way, you can send them to [Zapier](https://zapier.com/), [IFTTT](https://ifttt.com/), [Automate.io](https://automate.io/) and more, to take actions based on the results.
 
 Just send a URL in the `webhook` parameter. For example:

@@ -18,11 +18,11 @@ inputs:
   period:
     description: 'The length of the period used to calculate the stats, expressed in days'
     required: false
-    default: 30
+    default: '30'
   limit:
     description: 'The maximum number of rows to display in the table. A value of `0` means unlimited.'
     required: false
-    default: 0
+    default: '0'
   charts:
     description: 'Whether to add charts to the stats or not. Possible values: "true" or "false"'
     required: false
@@ -38,11 +38,7 @@ inputs:
   disableLinks:
     description: 'Prevents from adding any external links in the stats'
     required: false
-    default: false
-  telemetry:
-    description: 'Indicates if the action is allowed to send monitoring data to the developer.'
-    required: false
-    default: true
+    default: 'false'
   slackWebhook:
     description: 'A Slack webhook URL to post resulting stats.'
     required: false
@@ -64,7 +60,7 @@ inputs:
   disable-links:
     description: 'Used for retro compatibility. Use "disableLinks" input instead.'
     required: false
-    default: false
+    default: 'false'
   slack-webhook:
     description: 'Used for retro compatibility. Use "slackWebhook" input instead.'
     required: false

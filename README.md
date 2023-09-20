@@ -28,7 +28,6 @@ Or send the data to your favorite tools by using the integrations available:
 ## Privacy
 * **No repository data is collected**, stored, or distributed by this GitHub action. This action is **state-less**.
 * Charts data is sent over the URL and never stored or transmitted anywhere else.
-* [Minimal data](/src/services/telemetry/sendStart.js) is sent to Mixpanel in order to improve this action. However, you can opt-out using the `telemetry` option.
 
 ## Usage
 
@@ -54,10 +53,9 @@ The possible inputs for this action are:
 | `disableLinks` | If `true`, removes the links to the detailed charts. Possible values: `true` or `false`. | `false` |
 | `sortBy` | The column used to sort the data. Possible values: `REVIEWS`, `TIME`, `COMMENTS`. | `REVIEWS` |
 | `publishAs` | Where to publish the results. Possible values: as a `COMMENT`, on the pull request `DESCRIPTION`, or publish `NONE`. | `COMMENT` |
-| `telemetry` | Indicates if the action is allowed to send monitoring data to the developer. This data is [minimal](/src/services/telemetry/sendStart.js) and helps me improve this action. **This option is a premium feature reserved for [sponsors](#premium-features-).** |`true`|
-| `slackWebhook` | **🔥 New.** A Slack webhook URL to post resulting stats. **This option is a premium feature reserved for [sponsors](#premium-features-).** See [full documentation here](/docs/slack.md).  |`null`|
+| `slackWebhook` | **🔥 New.** A Slack webhook URL to post resulting stats. See [full documentation here](/docs/slack.md).  |`null`|
 | `slackChannel` | The Slack channel where stats will be posted. Include the `#` character (eg. `#mychannel`). Required when a `slackWebhook` is configured. |`null`|
-| `teamsWebhook` | **🔥 New.** A Microsoft Teams webhook URL to post resulting stats. **This option is a premium feature reserved for [sponsors](#premium-features-).** See [full documentation here](/docs/teams.md).  |`null`|
+| `teamsWebhook` | **🔥 New.** A Microsoft Teams webhook URL to post resulting stats. See [full documentation here](/docs/teams.md).  |`null`|
 | `webhook` | **🔥 New.** A webhook URL to send the resulting stats as JSON (integrate with Zapier, IFTTT...). See [full documentation here](/docs/webhook.md). |`null`|
 
 
@@ -199,27 +197,6 @@ Check the guide for the tool you want to integrate:
   ```
 </details>
 
-<details>
-  <summary>I'm a sponsor but still getting the error "...is a premium feature, available to sponsors".</summary>
-
-  1. Check the sponsorship comes from the account that owns the configured repos (usually an organization).
-  2. Make sure the sponsorship is configured as `public`, otherwise, the action cannot access the sponsorship information. If you prefer to keep it `private`, please reach me out to make it work for you that way 😉.
-</details>
-
-## Premium features ✨
-
-This action offers some premium features only for sponsors:
-
-* Disabling telemetry.
-* Slack integration.
-* Microsoft Teams integration.
-* Coming soon: Discord integration, web version.
-
-The **suggested sponsorship is $20 USD / month**. However, if it's not possible for you or your organization, please consider supporting it with any amount you can. Even a one-time sponsorship will enable the Premium features and encourage the progress of this project.
-
-Being a sponsor will also give you access to the premium features in all of my [other projects](#related-projects).
-
-Thanks for your support! 💙
 
 ## Related projects 🔥
 

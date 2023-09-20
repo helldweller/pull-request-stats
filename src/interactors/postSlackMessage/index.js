@@ -8,7 +8,6 @@ module.exports = async ({
   repos,
   core,
   slack,
-  isSponsor,
   reviewers,
   periodLength,
   disableLinks,
@@ -21,11 +20,6 @@ module.exports = async ({
     core.debug(t('integrations.slack.logs.notConfigured'));
     return;
   }
-
-  // if (!isSponsor) {
-  //   core.setFailed(t('integrations.slack.errors.notSponsor'));
-  //   return;
-  // }
 
   const send = (message) => {
     const params = {

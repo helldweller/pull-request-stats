@@ -11,7 +11,6 @@ module.exports = async ({
   repos,
   core,
   teams,
-  isSponsor,
   reviewers,
   periodLength,
   disableLinks,
@@ -24,11 +23,6 @@ module.exports = async ({
     core.debug(t('integrations.teams.logs.notConfigured'));
     return;
   }
-
-  // if (!isSponsor) {
-  //   core.setFailed(t('integrations.teams.errors.notSponsor'));
-  //   return;
-  // }
 
   const send = (body) => {
     const params = {

@@ -25,7 +25,6 @@ describe('Interactors | .postSlackMessage', () => {
 
   const defaultOptions = {
     core,
-    isSponsor: true,
     reviewers: 'REVIEWERS',
     pullRequest: 'PULl REQUEST',
     periodLength: 'PERIOD LENGTH',
@@ -64,15 +63,6 @@ describe('Interactors | .postSlackMessage', () => {
       const slack = { ...defaultOptions.slack, channel: null };
       await postSlackMessage({ ...defaultOptions, slack });
       expectDisabledIntegration();
-    });
-  });
-
-  describe('when user is not a sponsor', () => {
-    it('logs a error', async () => {
-      await postSlackMessage({ ...defaultOptions, isSponsor: false });
-      expect(setFailed).toHaveBeenCalled();
-      expect(buildMessage).not.toHaveBeenCalled();
-      expect(Fetchers.postToSlack).not.toHaveBeenCalled();
     });
   });
 

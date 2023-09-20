@@ -26,7 +26,6 @@ describe('Interactors | .postTeamsMessage', () => {
 
   const defaultOptions = {
     core,
-    isSponsor: true,
     reviewers: 'REVIEWERS',
     pullRequest: 'PULl REQUEST',
     periodLength: 'PERIOD LENGTH',
@@ -62,15 +61,6 @@ describe('Interactors | .postTeamsMessage', () => {
       const teams = { ...defaultOptions.teams, webhook: null };
       await postTeamsMessage({ ...defaultOptions, teams });
       expectDisabledIntegration();
-    });
-  });
-
-  describe('when user is not a sponsor', () => {
-    it('logs a error', async () => {
-      await postTeamsMessage({ ...defaultOptions, isSponsor: false });
-      expect(setFailed).toHaveBeenCalled();
-      expect(buildMessage).not.toHaveBeenCalled();
-      expect(Fetchers.postToWebhook).not.toHaveBeenCalled();
     });
   });
 

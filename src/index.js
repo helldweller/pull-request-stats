@@ -37,7 +37,6 @@ const getParams = () => {
     disableLinks: core.getBooleanInput('disableLinks') || core.getBooleanInput('disable-links'),
     pullRequestId: getPrId(),
     limit: parseInt(core.getInput('limit'), 10),
-    telemetry: core.getBooleanInput('telemetry'),
     webhook: core.getInput('webhook'),
     slack: {
       webhook: core.getInput('slackWebhook') || core.getInput('slack-webhook'),
